@@ -2,7 +2,7 @@ class QuestionBroadcastJob < ApplicationJob
   queue_as :default
 
   def perform(question)
-    ActionCable.server.broadcast 'class_channel', questiongit : render_question(question)
+    ActionCable.server.broadcast 'class_channel', question: render_question(question)
   end
 
   private
